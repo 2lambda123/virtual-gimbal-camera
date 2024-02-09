@@ -17,6 +17,17 @@ class InputAdapter:
     """
 
     def __init__(self, pipeline):
+        """Initializes the class instance with the provided pipeline.
+        Parameters:
+            - pipeline (object): An instance of the pipeline class.
+        Returns:
+            - None: Does not return any value.
+        Processing Logic:
+            - Sets the pipeline attribute.
+            - Creates a thread for the main function.
+            - Sets the default user message.
+            - Initializes the user message and cached user message attributes."""
+        
         self.pipeline = pipeline
         self.thread = threading.Thread(target=self.main)
         self.DEFAULT_USR_MSG = {"compass":0.0, "angle":0.0,\
